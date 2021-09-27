@@ -1,13 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>My First Repo</title>
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
-   <h1>y First Repo</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Basic</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+      body {
+        background-color: #fff;
+      }
+
+      header {
+        background-image: url("bellis.jpg") repeat 0 0;
+        background-color: #bc3c66;
+        height: 300px;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 100px;
+        list-style-type: none;
+      }
+
+      nav li {
+        margin-right: 1em;
+        margin-top: 2em;
+      }
+
+      nav li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      nav ul > li:first-of-type > a {
+        text-decoration: underline;
+      }
+
+      .title {
+        margin-top: 30px;
+        color: #fff;
+        font-family: "Open Sans Condensed", sans-serif;
+      }
+
+      .header-info p:before {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: #fff;
+        left: 39%;
+        top: 82%;
+        position: absolute;
+      }
+
+      .header-info p:after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: #fff;
+        left: 55%;
+        top: 82%;
+        position: absolute;
+      }
+
+      .icon {
+        margin-right: auto;
+      }
+
+      .header-info {
+        text-align: center;
+        position: relative;
+      }
+
+      .arrow-down {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4em;
+      }
+
+      .arrow {
+        box-sizing: border-box;
+        height: 1vw;
+        width: 1vw;
+        border-style: solid;
+        border-color: white;
+        border-width: 0px 1px 1px 0px;
+        transform: rotate(45deg);
+        transition: border-width 150ms ease-in-out;
+      }
+
+      main h1 {
+        text-align: center;
+        font-size: 1.6em;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      article {
+        width: 300px;
+        margin: 1em;
+      }
+
+      article img {
+        border-radius: 999px;
+      }
+
+      .name {
+        text-align: center;
+      }
+
+      .gallery img {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        margin-top: 2em;
+      }
+
+      .left,
+      .right {
+        width: 15px;
+        height: 15px;
+        transition: 0.5s;
+        float: left;
+        box-shadow: -2px 2px 0 black;
+      }
+
+      .left {
+        transform: rotate(45deg);
+      }
+
+      .right {
+        transform: rotate(-135deg);
+      }
+
+      .wrapper {
+        background-color: #f2f2f2;
+      }
+
+      .sociala-media p {
+        background-color: #fff;
+        padding: 1.3em;
+      }
+
+      .sociala-media img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .contact {
+        background-color: #b33257;
+      }
+
+      .contact h2 {
+        color: #fff;
+        text-align: center;
+        padding-top: 1em;
+        text-decoration: underline;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-gap: 1em;
+        margin-left: 150px;
+      }
+
+      input,
+      button,
+      textarea {
+        grid-column: 2 / 3;
+      }
+
+      form img {
+        grid-column: 3 / 3;
+        grid-row: 1/10;
+      }
+
+      button {
+        background-color: #000;
+        color: #fff;
+        padding: 0.5em;
+        margin-top: 10px;
+      }
+
+      form p {
+        grid-column: 3/3;
+        grid-row: 4/7;
+        color: #fff;
+      }
+
+      footer {
+        background-color: #000;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        height: 140px;
+      }
+
+      footer div {
+        color: #fff;
+        padding: 12px;
+        display: inline-block;
+      }
+
+      footer a {
+        color: #fff;
+        font-size: 0.8em;
+        margin: 1em;
+        text-decoration: none;
+      }
+
+      .small {
+        width: 30px;
+        height: 30px;
+        border-radius: 999px;
+        margin:0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="icon">
+            <img src="facebook_icon.png" alt="" />
+          </li>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">SOCIAL</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-info">
+        <h1 class="title">Premium Quality & Tradition</h1>
+        <p>SINCE 1978</p>
+      </div>
+
+      <div class="arrow-down">
+        <p class="arrow"></p>
+      </div>
+    </header>
+
+    <main>
+      <h1>Meet Our Team</h1>
+      <section class="container">
+        <article>
+          <img src="nisse.jpg" alt="Ansiktet på nisse Hult" />
+          <p class="name">Nisse Hult</p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. At tempore
+            pariatur deleniti cumque voluptatem illo quasi minus dicta autem
+            iure!
+          </p>
+        </article>
+
+        <article>
+          <img src="lena.jpg" alt="Ansiktet på nisse Hult" />
+          <p class="name">Lena Persson</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+            hic officia quibusdam veniam. Totam iusto labore, repellendus optio
+            ea eos.
+          </p>
+        </article>
+
+        <article>
+          <img src="pia.jpg" alt="Ansiktet på nisse Hult" />
+          <p class="name">Pia Ek</p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Praesentium maiores voluptas dicta deleniti fugiat itaque dolorem
+            quod repellendus laudantium earum!
+          </p>
+        </article>
+      </section>
+
+      <section class="wrapper">
+        <section class="container gallery">
+          <p class="left"></p>
+          <img src="image1.jpg" alt=" " />
+          <img src="image2.jpg" alt=" " />
+          <img src="image3.jpg" alt=" " />
+          <img src="image4.jpg" alt=" " />
+          <p class="right"></p>
+        </section>
+
+        <div class="container sociala-media">
+          <img src="instagram.png" alt="" />
+          <p>Follow us on Instagram</p>
+        </div>
+      </section>
+
+      <section class="contact">
+        <h2>Contact Us</h2>
+        <form class="form1" action="">
+          <input type="text" />
+          <input type="email" placeholder="contact@email.com" />
+          <textarea name="" id="" cols="30" rows="4"></textarea>
+          <img src="map.png" alt="Karta" />
+          <p>
+            811 7th Avenue 58rd Street <br />
+            New York, 10019, United States
+          </p>
+          <button>SEND</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <img
+          style="
+            width: 25px;
+            height: 25px;
+            vertical-align: bottom;
+            border-radius: 999px;
+          "
+          src="bellis.jpg"
+          alt=""
+        />
+        <a href="#">SOCIAL</a>
+        <a href="#">CONTACT</a>
+      </div>
+
+      <div class="container">
+        <img class="small" src="facebook.png" alt="" />
+        <img class="small" src="facebook.png" alt="" />
+        <img class="small" src="facebook.png" alt="" />
+        <img class="small" src="facebook.png" alt="" />
+      </div>
+    </footer>
+  </body>
 </html>
